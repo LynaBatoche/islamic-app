@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hijri Calendar - Heeba</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <style>
+    /* Additional styles for month descriptions */
+    .month-description-section {
+      margin-top: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, whitesmoke 0%, white 100%);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .month-description-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid gainsboro;
+    }
+    
+    .month-description-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: darkslategray;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .month-description-title i {
+      color: dodgerblue;
+    }
+    
+    .month-description-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+    
+    .month-description-item {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      border-left: 4px solid dodgerblue;
+      transition: transform 0.3s ease;
+    }
+    
+    .month-description-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .month-description-item.special {
+      border-left-color: #e74c3c;
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    }
+    
+    .month-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    
+    .month-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .month-number {
+      background: dodgerblue;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .month-status {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    
+    .month-status.sacred {
+      background-color: lightyellow;
+      color: saddlebrown;
+    }
+
+    .month-status.blessed {
+      background-color: lightsteelblue;
+      color: white;
+    }
+
+    .month-status.important {
+      background-color: lightpink;
+      color: white;
+    }
+    
+    .month-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 15px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+    }
+    
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .detail-label {
+      font-size: 0.85rem;
+      color: #7f8c8d;
+      margin-bottom: 5px;
+    }
+    
+    .detail-value {
+      font-weight: 600;
+      color: #2c3e50;
+    }
+    
+    .month-description-text {
+      line-height: 1.6;
+      color: #5a5a5a;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+    
+    .month-events {
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px dashed #ddd;
+    }
+    
+    .events-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .events-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .event-tag {
+      background-color: #e8f4fc;
+      color: dodgerblue;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .event-tag.highlight {
+      background-color: lightyellow;
+      color: saddlebrown;
+    }
+    
+    /* Tabs for month descriptions */
+    .month-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 20px;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    
+    .month-tab {
+      padding: 8px 16px;
+      background: white;
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 500;
+      color: #7f8c8d;
+      transition: all 0.3s ease;
+    }
+    
+    .month-tab:hover {
+      background: dodgerblue;
+      color: white;
+      border-color: dodgerblue;
+    }
+
+    .month-tab.active {
+      background: dodgerblue;
+      color: white;
+      border-color: dodgerblue;
+    }
+    
+    /* Calendar styling improvements */
+    .calendar-day {
+      position: relative;
+      height: 90px;
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      background-color: white;
+      cursor: pointer;
+    }
+    
+    .calendar-day:hover {
+      background-color: #f8f9fa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .month-description-item {
+        padding: 15px;
+      }
+      
+      .month-details {
+        grid-template-columns: 1fr;
+      }
+      
+      .month-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+      }
+      
+      .month-tab {
+        white-space: nowrap;
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+      
+      .calendar-day {
+        height: 70px;
+        padding: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-mosque"></i>
+          <span>Heeba</span>
+        </div>
+        <nav class="nav-menu">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="duas.html" class="nav-link" data-i18n="nav.duas">Duas</a>
+          <a href="hijri.html" class="nav-link active" data-i18n="nav.calendar">Calendar</a>
+         
+        </nav>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hijri Calendar Page Content -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <h1 data-i18n="hijri.title">Hijri Calendar</h1>
+        <p data-i18n="hijri.subtitle">Islamic calendar with important dates, events, and month descriptions</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <div class="hijri-container">
+        <div class="current-date-card">
+          <div class="date-display">
+            <div class="gregorian-date">
+              <h3 data-i18n="hijri.gregorian">Gregorian Date</h3>
+              <div class="date-large" id="gregorian-date">Loading...</div>
+            </div>
+            <div class="hijri-date">
+              <h3 data-i18n="hijri.hijri">Hijri Date</h3>
+              <div class="date-large" id="hijri-date">Loading...</div>
+              <div class="current-hijri-month" id="current-hijri-month"></div>
+            </div>
+          </div>
+          <div class="time-display">
+            <div class="current-time" id="current-time">00:00:00</div>
+            <div class="current-day" id="current-day">Monday</div>
+          </div>
+        </div>
+
+        <div class="calendar-section">
+          <div class="calendar-header">
+            <h2 data-i18n="hijri.monthlyCalendar">Monthly Calendar</h2>
+            <div class="month-navigation">
+              <button class="nav-btn calendar-nav" id="prev-month" aria-label="Previous month"><i class="fas fa-chevron-left"></i></button>
+              <span class="current-month calendar-month" id="current-month">March 2024</span>
+              <button class="nav-btn calendar-nav" id="next-month" aria-label="Next month"><i class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+          
+          <div class="calendar-grid">
+            <div class="calendar-weekdays">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+            <div class="calendar-days" id="calendar-days">
+              <!-- Calendar days will be populated by JavaScript -->
+            </div>
+          </div>
+        </div>
+
+        <div class="islamic-events">
+          <h2 data-i18n="hijri.upcomingEvents">Upcoming Islamic Events</h2>
+          <div class="events-list" id="dynamic-events-list">
+            <!-- Events will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- New Section: Month Descriptions -->
+        <div class="month-description-section">
+          <div class="month-description-header">
+            <div class="month-description-title">
+              <i class="fas fa-book-open"></i>
+              <span data-i18n="hijri.monthDescriptions">Islamic Month Descriptions</span>
+            </div>
+            <div class="month-tabs" id="month-tabs">
+              <!-- Month tabs will be generated by JavaScript -->
+            </div>
+          </div>
+          
+          <div class="month-description-content" id="month-descriptions">
+            <!-- Month descriptions will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mosque"></i>
+            <span>Heedaya</span>
+          </div>
+          <p>&copy; 2026</p>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> <span data-i18n="nav.home">Home</span></a></li>
+            <li><a href="duas.html"><i class="fas fa-pray"></i> <span data-i18n="nav.duas">Duas</span></a></li>
+            <li><a href="hijri.html"><i class="fas fa-calendar-alt"></i> <span data-i18n="nav.calendar">Calendar</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.message">Message</h3>
+          <p data-i18n="footer.messageText">This site is made with <i class="fas fa-heart" style="color: #e74c3c;"></i> to a special person</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Complete Hijri Calendar JavaScript with Month Descriptions
+
+    // Global variables
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+    let selectedHijriMonth = 0; // For month descriptions
+
+    // Function to get translated Islamic months
+    function getIslamicMonths() {
+      return globalThis.translations ? globalThis.translations["month.names"] || [
+        "Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani",
+        "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Sha'ban",
+        "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"
+      ] : [
+        "Muharram", "Safar", "Rabi' al-Awwal", "Rabi' al-Thani",
+        "Jumada al-Awwal", "Jumada al-Thani", "Rajab", "Sha'ban",
+        "Ramadan", "Shawwal", "Dhu al-Qi'dah", "Dhu al-Hijjah"
+      ];
+    }
+
+    // Function to get translated Arabic month names
+    function getIslamicMonthsArabic() {
+      return globalThis.translations ? globalThis.translations["month.arabic"] || [
+        "مُحَرَّم", "صَفَر", "رَبِيعُ ٱلْأَوَّل", "رَبِيعُ ٱلثَّانِي",
+        "جُمَادَىٰ ٱلْأُولَىٰ", "جُمَادَىٰ ٱلثَّانِيَة", "رَجَب", "شَعْبَان",
+        "رَمَضَان", "شَوَّال", "ذُو ٱلْقَعْدَة", "ذُو ٱلْحِجَّة"
+      ] : [
+        "مُحَرَّم", "صَفَر", "رَبِيعُ ٱلْأَوَّل", "رَبِيعُ ٱلثَّانِي",
+        "جُمَادَىٰ ٱلْأُولَىٰ", "جُمَادَىٰ ٱلثَّانِيَة", "رَجَب", "شَعْبَان",
+        "رَمَضَان", "شَوَّال", "ذُو ٱلْقَعْدَة", "ذُو ٱلْحِجَّة"
+      ];
+    }
+
+    // Function to build month descriptions dynamically from translations
+    function buildMonthDescriptions() {
+      const monthKeys = [
+        "muharram", "safar", "rabialawwal", "rabialthani",
+        "jumadaalawwal", "jumadaalthani", "rajab", "shaban",
+        "ramadan", "shawwal", "dhualqidah", "dhualhijjah"
+      ];
+
+      const descriptions = [];
+      const islamicMonths = getIslamicMonths();
+      const islamicMonthsArabic = getIslamicMonthsArabic();
+
+      monthKeys.forEach((key, index) => {
+        const monthData = {
+          name: islamicMonths[index],
+          arabicName: islamicMonthsArabic[index],
+          status: globalThis.translations ? globalThis.translations[`month.${key}.status`] || "regular" : "regular",
+          description: globalThis.translations ? globalThis.translations[`month.${key}.description`] || "" : "",
+          events: globalThis.translations ? globalThis.translations[`month.${key}.events`] ? globalThis.translations[`month.${key}.events`].split(', ') : [] : [],
+          days: globalThis.translations ? globalThis.translations[`month.${key}.days`] || 30 : 30,
+          significance: globalThis.translations ? globalThis.translations[`month.${key}.significance`] || "" : "",
+          commonPractices: globalThis.translations ? globalThis.translations[`month.${key}.commonPractices`] || "" : ""
+        };
+        descriptions.push(monthData);
+      });
+
+      return descriptions;
+    }
+
+    // Function to get translated weekdays
+    function getWeekdays() {
+      return globalThis.translations ? globalThis.translations["weekdays"] || ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"] : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    }
+
+    // Function to get translated full weekdays
+    function getFullWeekdays() {
+      return globalThis.translations ? globalThis.translations["weekdays.full"] || ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] : ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    }
+
+    // Function to get translated Gregorian months
+    function getGregorianMonths() {
+      return globalThis.translations ? globalThis.translations["gregorian.months"] || [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ] : [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+    }
+
+    // Function to get translated status text
+    function getStatusText(status) {
+      if (!globalThis.translations) return status.charAt(0).toUpperCase() + status.slice(1) + " Month";
+      return globalThis.translations[`status.${status}`] || status.charAt(0).toUpperCase() + status.slice(1) + " Month";
+    }
+
+    // Initialize translated data
+    let islamicMonths = getIslamicMonths();
+    let islamicMonthsArabic = getIslamicMonthsArabic();
+    let monthDescriptions = buildMonthDescriptions();
+    let weekdays = getWeekdays();
+    let fullWeekdays = getFullWeekdays();
+    let gregorianMonths = getGregorianMonths();
+
+    // Islamic events data
+    const islamicEvents = {
+      "01-01": { name: "Islamic New Year", month: "Muharram", description: "Beginning of Hijri year" },
+      "01-10": { name: "Ashura", month: "Muharram", description: "Day of Ashura - Fasting recommended" },
+      "03-12": { name: "Mawlid al-Nabi", month: "Rabi' al-Awwal", description: "Prophet's Birthday" },
+      "07-27": { name: "Isra and Mi'raj", month: "Rajab", description: "Night Journey and Ascension" },
+      "08-15": { name: "Laylat al-Bara'ah", month: "Sha'ban", description: "Night of Forgiveness" },
+      "09-01": { name: "First of Ramadan", month: "Ramadan", description: "Beginning of fasting month" },
+      "09-27": { name: "Laylat al-Qadr", month: "Ramadan", description: "Night of Power" },
+      "10-01": { name: "Eid al-Fitr", month: "Shawwal", description: "Festival of Breaking Fast" },
+      "12-08": { name: "Hajj begins", month: "Dhu al-Hijjah", description: "Pilgrimage to Mecca" },
+      "12-09": { name: "Day of Arafah", month: "Dhu al-Hijjah", description: "Day of Arafah - Fasting recommended" },
+      "12-10": { name: "Eid al-Adha", month: "Dhu al-Hijjah", description: "Festival of Sacrifice" }
+    };
+
+    // Function to convert Gregorian to Hijri (approximation)
+    function gregorianToHijri(date) {
+      // This is a simplified conversion for demonstration
+      const startIslamic = new Date(622, 6, 16); // July 16, 622 CE
+      const diffTime = date - startIslamic;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      
+      const hijriYear = Math.floor(diffDays / 354.366);
+      const hijriDay = Math.floor(diffDays % 354.366);
+      
+      // Calculate month and day
+      let month = 0;
+      let day = hijriDay;
+      const monthLengths = [30, 29, 30, 29, 30, 29, 30, 29, 30, 29, 30, 29];
+      
+      for (let i = 0; i < monthLengths.length; i++) {
+        if (day < monthLengths[i]) {
+          month = i;
+          break;
+        }
+        day -= monthLengths[i];
+      }
+      
+      return {
+        year: hijriYear + 1,
+        month: month + 1,
+        monthIndex: month,
+        monthName: islamicMonths[month],
+        arabicName: islamicMonthsArabic[month],
+        day: day + 1
+      };
+    }
+
+    // Function to update current date display
+    function updateCurrentDate() {
+      const now = new Date();
+      
+      // Update Gregorian date
+      const gregorianOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+      const gregorianFormatted = now.toLocaleDateString('en-US', gregorianOptions);
+      document.getElementById('gregorian-date').textContent = gregorianFormatted;
+      
+      // Update Hijri date
+      const hijriDate = gregorianToHijri(now);
+      const hijriFormatted = `${hijriDate.day} ${hijriDate.monthName} ${hijriDate.year} AH`;
+      document.getElementById('hijri-date').textContent = hijriFormatted;
+      
+      // Update current Hijri month info
+      document.getElementById('current-hijri-month').innerHTML = 
+        `<i class="fas fa-info-circle"></i> Currently in: <strong>${hijriDate.monthName}</strong> (${hijriDate.arabicName})`;
+      
+      // Update current time
+      const timeFormatted = now.toLocaleTimeString('en-US', { hour12: false });
+      document.getElementById('current-time').textContent = timeFormatted;
+      
+      // Update current day
+      const dayFormatted = fullWeekdays[now.getDay()];
+      document.getElementById('current-day').textContent = dayFormatted;
+      
+      // Highlight current Hijri month in tabs
+      highlightCurrentMonth(hijriDate.monthIndex);
+    }
+
+    // Function to generate calendar
+    function generateCalendar(month, year) {
+      const calendarDays = document.getElementById('calendar-days');
+      calendarDays.innerHTML = '';
+      
+      // Update month display
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      document.getElementById('current-month').textContent = `${monthNames[month]} ${year}`;
+      
+      // Get first day of month
+      const firstDay = new Date(year, month, 1);
+      const firstDayIndex = firstDay.getDay();
+      
+      // Get last day of month
+      const lastDay = new Date(year, month + 1, 0);
+      const lastDate = lastDay.getDate();
+      
+      // Get previous month last date
+      const prevLastDay = new Date(year, month, 0);
+      const prevLastDate = prevLastDay.getDate();
+      
+      // Get next month days
+      const nextDays = 7 - ((firstDayIndex + lastDate) % 7);
+      
+      // Previous month days
+      for (let i = firstDayIndex; i > 0; i--) {
+        const day = document.createElement('div');
+        day.classList.add('calendar-day', 'other-month');
+        day.textContent = prevLastDate - i + 1;
+        calendarDays.appendChild(day);
+      }
+      
+      // Current month days
+      const today = new Date();
+      
+      for (let i = 1; i <= lastDate; i++) {
+        const day = document.createElement('div');
+        day.classList.add('calendar-day');
+        day.textContent = i;
+        
+        // Highlight today
+        if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+          day.classList.add('today');
+        }
+        
+        // Check for Islamic events
+        const monthStr = (month + 1).toString().padStart(2, '0');
+        const dayStr = i.toString().padStart(2, '0');
+        const dateKey = `${monthStr}-${dayStr}`;
+        
+        // Add event indicator if exists
+        if (islamicEvents[dateKey]) {
+          const eventIndicator = document.createElement('div');
+          eventIndicator.classList.add('event-indicator');
+          eventIndicator.title = islamicEvents[dateKey].name;
+          day.appendChild(eventIndicator);
+          
+          // Add click event to show event details
+          day.addEventListener('click', function() {
+            showEventDetails(islamicEvents[dateKey], i, monthNames[month]);
+          });
+        }
+        
+        // Add Hijri date
+        const hijriDate = gregorianToHijri(new Date(year, month, i));
+        const hijriSpan = document.createElement('span');
+        hijriSpan.classList.add('hijri-date-small');
+        hijriSpan.textContent = `${hijriDate.day} ${hijriDate.monthName.substring(0, 3)}`;
+        day.appendChild(hijriSpan);
+        
+        // Add click event to show month description
+        day.addEventListener('click', function() {
+          showMonthDescription(hijriDate.monthIndex);
+        });
+        
+        calendarDays.appendChild(day);
+      }
+      
+      // Next month days
+      for (let i = 1; i <= nextDays; i++) {
+        const day = document.createElement('div');
+        day.classList.add('calendar-day', 'other-month');
+        day.textContent = i;
+        calendarDays.appendChild(day);
+      }
+    }
+
+    // Function to update upcoming events
+    function updateUpcomingEvents() {
+      const now = new Date();
+      const eventsList = document.getElementById('dynamic-events-list');
+      eventsList.innerHTML = '';
+      
+      // Add real upcoming events (next 60 days)
+      let eventsAdded = 0;
+      for (let i = 0; i < 60 && eventsAdded < 5; i++) {
+        const futureDate = new Date(now);
+        futureDate.setDate(now.getDate() + i);
+        
+        const monthStr = (futureDate.getMonth() + 1).toString().padStart(2, '0');
+        const dayStr = futureDate.getDate().toString().padStart(2, '0');
+        const dateKey = `${monthStr}-${dayStr}`;
+        
+        if (islamicEvents[dateKey]) {
+          const event = islamicEvents[dateKey];
+          const hijriDate = gregorianToHijri(futureDate);
+          
+          const eventItem = document.createElement('div');
+          eventItem.classList.add('event-item');
+          
+          eventItem.innerHTML = `
+            <div class="event-date">
+              <span class="event-day">${futureDate.getDate()}</span>
+              <span class="event-month">${futureDate.toLocaleString('default', { month: 'short' })}</span>
+            </div>
+            <div class="event-info">
+              <h4>${event.name}</h4>
+              <p>${event.description} - ${hijriDate.day} ${hijriDate.monthName}</p>
+            </div>
+          `;
+          
+          eventsList.appendChild(eventItem);
+          eventsAdded++;
+        }
+      }
+    }
+
+    // Function to generate month tabs
+    function generateMonthTabs() {
+      const monthTabs = document.getElementById('month-tabs');
+      monthTabs.innerHTML = '';
+      
+      monthDescriptions.forEach((month, index) => {
+        const tab = document.createElement('button');
+        tab.classList.add('month-tab');
+        if (index === selectedHijriMonth) {
+          tab.classList.add('active');
+        }
+        tab.textContent = month.name;
+        tab.dataset.monthIndex = index;
+        
+        tab.addEventListener('click', function() {
+          selectedHijriMonth = parseInt(this.dataset.monthIndex);
+          showMonthDescription(selectedHijriMonth);
+          updateActiveTab();
+        });
+        
+        monthTabs.appendChild(tab);
+      });
+    }
+
+    // Function to show month description
+    function showMonthDescription(monthIndex) {
+      const monthDescContainer = document.getElementById('month-descriptions');
+      const month = monthDescriptions[monthIndex];
+
+      // Update selected month
+      selectedHijriMonth = monthIndex;
+
+      let statusClass = '';
+      let statusText = getStatusText(month.status);
+
+      switch(month.status) {
+        case 'sacred':
+          statusClass = 'sacred';
+          break;
+        case 'blessed':
+          statusClass = 'blessed';
+          break;
+        case 'important':
+          statusClass = 'important';
+          break;
+      }
+
+      const eventsHtml = month.events.map(event => {
+        const isHighlight = event.includes('Eid') || event.includes('Hajj') || event.includes('Ramadan');
+        return `<span class="event-tag ${isHighlight ? 'highlight' : ''}">${event}</span>`;
+      }).join('');
+
+      // Get translated labels
+      const arabicNameLabel = globalThis.translations ? globalThis.translations["month.arabicNameLabel"] || "Arabic Name" : "Arabic Name";
+      const daysLabel = globalThis.translations ? globalThis.translations["month.daysLabel"] || "Days in Month" : "Days in Month";
+      const significanceLabel = globalThis.translations ? globalThis.translations["month.significanceLabel"] || "Significance" : "Significance";
+      const commonPracticesLabel = globalThis.translations ? globalThis.translations["month.commonPracticesLabel"] || "Common Practices" : "Common Practices";
+      const eventsTitle = globalThis.translations ? globalThis.translations["month.eventsTitle"] || "Important Events in" : "Important Events in";
+
+      monthDescContainer.innerHTML = `
+        <div class="month-description-item ${month.status === 'sacred' ? 'special' : ''}">
+          <div class="month-header">
+            <div>
+              <span class="month-name">${month.name}</span>
+              <span class="month-status ${statusClass}">${statusText}</span>
+            </div>
+            <div class="month-number">${monthIndex + 1}</div>
+          </div>
+
+          <div class="month-details">
+            <div class="detail-item">
+              <span class="detail-label">${arabicNameLabel}</span>
+              <span class="detail-value">${month.arabicName}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">${daysLabel}</span>
+              <span class="detail-value">${month.days} days</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">${significanceLabel}</span>
+              <span class="detail-value">${month.significance}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">${commonPracticesLabel}</span>
+              <span class="detail-value">${month.commonPractices}</span>
+            </div>
+          </div>
+
+          <div class="month-description-text">
+            ${month.description}
+          </div>
+
+          <div class="month-events">
+            <div class="events-title">
+              <i class="fas fa-calendar-star"></i>
+              ${eventsTitle} ${month.name}
+            </div>
+            <div class="events-list">
+              ${eventsHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      updateActiveTab();
+    }
+
+    // Function to update active tab
+    function updateActiveTab() {
+      const tabs = document.querySelectorAll('.month-tab');
+      tabs.forEach((tab, index) => {
+        if (index === selectedHijriMonth) {
+          tab.classList.add('active');
+        } else {
+          tab.classList.remove('active');
+        }
+      });
+    }
+
+    // Function to highlight current month in tabs
+    function highlightCurrentMonth(monthIndex) {
+      const tabs = document.querySelectorAll('.month-tab');
+      tabs.forEach((tab, index) => {
+        tab.classList.remove('current');
+        if (index === monthIndex) {
+          tab.classList.add('current');
+          tab.innerHTML = `${islamicMonths[index]} <i class="fas fa-check"></i>`;
+        } else {
+          tab.textContent = islamicMonths[index];
+        }
+      });
+    }
+
+    // Function to show event details
+    function showEventDetails(event, day, month) {
+      // Create a modal or alert with event details
+      alert(`🎉 ${event.name}\n📅 ${day} ${month}\n📖 ${event.description}\n\nClick on a month tab below for more information about Islamic months.`);
+    }
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize
+      updateCurrentDate();
+      generateCalendar(currentMonth, currentYear);
+      updateUpcomingEvents();
+      generateMonthTabs();
+      showMonthDescription(0); // Show first month by default
+      
+      // Update time every second
+      setInterval(updateCurrentDate, 1000);
+      
+      // Month navigation
+      document.getElementById('prev-month').addEventListener('click', function() {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        generateCalendar(currentMonth, currentYear);
+      });
+      
+      document.getElementById('next-month').addEventListener('click', function() {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        generateCalendar(currentMonth, currentYear);
+      });
+      
+      // Mobile menu toggle
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+          const navMenu = document.querySelector('.nav-menu');
+          navMenu.classList.toggle('active');
+          mobileToggle.classList.toggle('active');
+        });
+      }
+      
+      // Language selector
+      const languageSelect = document.getElementById('languageSelect');
+      if (languageSelect) {
+        languageSelect.addEventListener('change', function() {
+          const selectedLanguage = this.value;
+          globalThis.translatePage(selectedLanguage);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

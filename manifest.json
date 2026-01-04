@@ -1,0 +1,28 @@
+{
+  "name": "Hidaya - Islamic Companion",
+  "short_name": "Hidaya",
+  "description": "Your spiritual companion for daily Islamic practices including prayer times, duas, and Hijri calendar",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#F5F5DC",
+  "theme_color": "#D4AF37",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "education", "books"],
+  "lang": "en",
+  "dir": "ltr"
+}

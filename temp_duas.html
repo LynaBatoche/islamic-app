@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Duas - Hidaya</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-mosque"></i>
+          <span data-i18n="app.name">Hidaya</span>
+        </div>
+        <nav class="nav-menu">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="duas.html" class="nav-link active" data-i18n="nav.duas">Duas</a>
+          <a href="hijri.html" class="nav-link" data-i18n="nav.calendar">Calendar</a>
+          <div class="language-selector">
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+        </nav>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Duas Page Content -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <h1 data-i18n="duas.title">Daily Duas</h1>
+        <p data-i18n="duas.subtitle">Authentic Islamic supplications for morning, evening, night and special occasions</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <div class="duas-container">
+        <!-- Category Tabs -->
+        <div class="duas-tabs">
+          <button class="tab-btn active" data-category="morning" data-i18n="duas.morning">Morning Duas</button>
+          <button class="tab-btn" data-category="evening" data-i18n="duas.evening">Evening Duas</button>
+          <button class="tab-btn" data-category="night" data-i18n="duas.night">Night Duas</button>
+          <button class="tab-btn" data-category="special" data-i18n="duas.special">Special Occasions</button>
+        </div>
+
+        <!-- Duas Content -->
+        <div class="duas-content">
+          <!-- Morning Duas -->
+          <div class="duas-category active" id="morning-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.morningTitle">Morning Supplications</h2>
+              <p data-i18n="duas.morningDescription">Recite these duas from Fajr until sunrise for protection and blessings throughout the day.</p>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.morningDua1">Morning Remembrance</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ
+              </div>
+              <div class="dua-transliteration">
+                "Asbahna wa asbahal-mulku lillahi walhamdu lillahi, la ilaha illallahu wahdahu la sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'ala kulli shay'in qadir. Rabbi as'aluka khayra ma fi hadhal-yawmi wa khayra ma ba'dahu, wa a'udhu bika min sharri ma fi hadhal-yawmi wa sharri ma ba'dahu. Rabbi a'udhu bika minal-kasali wa su'il-kibari. Rabbi a'udhu bika min 'adhabin fin-nari wa 'adhabin fil-qabri."
+              </div>
+              <div class="dua-translation" data-i18n="duas.morningDua1Trans">
+                "We have reached the morning and at this very time all sovereignty belongs to Allah, and all praise is for Allah. None has the right to be worshipped except Allah, alone, without partner. To Him belongs all sovereignty and praise and He is over all things omnipotent. My Lord, I ask You for the good of this day and the good of what follows it and I take refuge in You from the evil of this day and the evil of what follows it. My Lord, I take refuge in You from laziness and senility. My Lord, I take refuge in You from torment in the Fire and punishment in the grave."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.morningDua1Ref">Muslim 4/2088</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.morningDua2">Protection and Trust</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ
+              </div>
+              <div class="dua-transliteration">
+                "Bismillahi alladhi la yadurru ma'as-mihi shay'un fil-ardi wa la fis-sama'i wa huwas-sami'ul-'alim"
+              </div>
+              <div class="dua-translation" data-i18n="duas.morningDua2Trans">
+                "In the name of Allah, with whose name nothing is harmed on earth or in the heavens, and He is the Hearing, the Knowing."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.morningDua2Ref">Abu Dawud 4/323</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.morningDua3">Seeking Forgiveness</h3>
+                  <span class="dua-category-tag">Forgiveness</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma anta rabbi la ilaha illa anta khalaqtani wa ana 'abduka wa ana 'ala 'ahdika wa wa'dika ma istata'tu a'udhu bika min sharri ma sana'tu abu'u laka bini'matika 'alayya wa abu'u bidhanbi faghfir li fa innahu la yaghfirudh-dhunuba illa anta"
+              </div>
+              <div class="dua-translation" data-i18n="duas.morningDua3Trans">
+                "O Allah, You are my Lord, there is no god but You. You created me and I am Your servant. I am faithful to my covenant and my promise as much as I can. I seek refuge in You from the evil of what I have done. I acknowledge Your favor upon me, and I acknowledge my sin. So forgive me, for indeed none forgives sins except You."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.morningDua3Ref">Bukhari 7/150</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.morningDua4">Blessing of the Day</h3>
+                  <span class="dua-category-tag">Blessings</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلًا مُتَقَبَّلًا
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni as'aluka 'ilman nafi'an wa rizqan tayyiban wa 'amalan mutaqabbalan"
+              </div>
+              <div class="dua-translation" data-i18n="duas.morningDua4Trans">
+                "O Allah, I ask You for beneficial knowledge, good provision, and accepted deeds."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.morningDua4Ref">Ibn Majah 925</span>
+              </div>
+            </div>
+
+            <!-- NEW: Morning Guidance Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Guidance for the Day</h3>
+                  <span class="dua-category-tag">Guidance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ وَعَافِنِي فِيمَنْ عَافَيْتَ وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ وَبَارِكْ لِي فِيمَا أَعْطَيْتَ وَقِنِي شَرَّ مَا قَضَيْتَ فَإِنَّكَ تَقْضِي وَلَا يُقْضَى عَلَيْكَ وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ وَلَا يَعِزُّ مَنْ عَادَيْتَ تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma ihdini fiman hadayta, wa 'afini fiman 'afayta, wa tawallani fiman tawallayta, wa barik li fima a'tayta, wa qini sharra ma qadayta, fa innaka taqdi wa la yuqda 'alayka, wa innahu la yadhillu man walayta, wa la ya'izzu man 'adayta, tabarakta rabbana wa ta'alayta."
+              </div>
+              <div class="dua-translation">
+                "O Allah, guide me among those You have guided, grant me health among those You have granted health, befriend me among those You have befriended, bless me in what You have given me, and protect me from the evil that You have decreed. For verily, You decree and none can decree over You. He whom You support can never be humiliated and he whom You take as an enemy can never be honored. Blessed are You, O Lord, and Exalted."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Tirmidhi 5/464</span>
+              </div>
+            </div>
+
+            <!-- NEW: Morning Comprehensive Protection Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Comprehensive Morning Protection</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَهَ إِلَّا أَنْتَ. اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَهَ إِلَّا أَنْتَ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma 'afini fi badani, Allahumma 'afini fi sam'i, Allahumma 'afini fi basari, la ilaha illa anta. Allahumma inni a'udhu bika minal-kufri wal-faqri, wa a'udhu bika min 'adhabil-qabri, la ilaha illa anta."
+              </div>
+              <div class="dua-translation">
+                "O Allah, make me healthy in my body. O Allah, preserve for me my hearing. O Allah, preserve for me my sight. There is no god but You. O Allah, I seek refuge in You from disbelief and poverty, and I seek refuge in You from the punishment of the grave. There is no god but You."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Abu Dawud 4/324</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evening Duas -->
+          <div class="duas-category" id="evening-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.eveningTitle">Evening Supplications</h2>
+              <p data-i18n="duas.eveningDescription">Recite these duas from Asr until sunset for protection through the night.</p>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.eveningDua1">Evening Remembrance</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ
+              </div>
+              <div class="dua-transliteration">
+                "Amsayna wa amsal-mulku lillahi walhamdu lillahi, la ilaha illallahu wahdahu la sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'ala kulli shay'in qadir. Rabbi as'aluka khayra ma fi hadhihil-laylati wa khayra ma ba'daha, wa a'udhu bika min sharri ma fi hadhihil-laylati wa sharri ma ba'daha. Rabbi a'udhu bika minal-kasali wa su'il-kibari. Rabbi a'udhu bika min 'adhabin fin-nari wa 'adhabin fil-qabri."
+              </div>
+              <div class="dua-translation" data-i18n="duas.eveningDua1Trans">
+                "We have reached the evening and at this very time all sovereignty belongs to Allah, and all praise is for Allah. None has the right to be worshipped except Allah, alone, without partner. To Him belongs all sovereignty and praise and He is over all things omnipotent. My Lord, I ask You for the good of this night and the good of what follows it and I take refuge in You from the evil of this night and the evil of what follows it. My Lord, I take refuge in You from laziness and senility. My Lord, I take refuge in You from torment in the Fire and punishment in the grave."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.eveningDua1Ref">Muslim 4/2088</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.eveningDua2">Seeking Protection</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ
+              </div>
+              <div class="dua-transliteration">
+                "Bismillahi alladhi la yadurru ma'as-mihi shay'un fil-ardi wa la fis-sama'i wa huwas-sami'ul-'alim"
+              </div>
+              <div class="dua-translation" data-i18n="duas.eveningDua2Trans">
+                "In the name of Allah, with whose name nothing is harmed on earth or in the heavens, and He is the Hearing, the Knowing."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.eveningDua2Ref">Abu Dawud 4/323</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.eveningDua3">Evening Tasbih</h3>
+                  <span class="dua-category-tag">Remembrance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ
+              </div>
+              <div class="dua-transliteration">
+                "Subhanallahi wa bihamdihi 'adada khalqihi wa rida nafsihi wa zinata 'arshihi wa midada kalimatihi"
+              </div>
+              <div class="dua-translation" data-i18n="duas.eveningDua3Trans">
+                "How perfect Allah is and I praise Him by the number of His creation and His pleasure, and by the weight of His Throne, and the ink of His words."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.eveningDua3Ref">Muslim 4/2090</span>
+              </div>
+            </div>
+
+            <!-- NEW: Evening Guidance Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Guidance Through the Night</h3>
+                  <span class="dua-category-tag">Guidance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي، وَأَصْلِحْ لِي دُنْيَايَ الَّتِي فِيهَا مَعَاشِي، وَأَصْلِحْ لِي آخِرَتِي الَّتِي فِيهَا مَعَادِي، وَاجْعَلِ الْحَيَاةَ زِيَادَةً لِي فِي كُلِّ خَيْرٍ، وَاجْعَلِ الْمَوْتَ رَاحَةً لِي مِنْ كُلِّ شَرٍّ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma aslih li dini alladhi huwa 'ismatu amri, wa aslih li dunyaya allati fiha ma'ashi, wa aslih li akhirati allati fiha ma'adi, waj'alil-hayata ziyadatan li fi kulli khayrin, waj'alil-mawta rahatan li min kulli sharrin."
+              </div>
+              <div class="dua-translation">
+                "O Allah, set right for me my religion which is the safeguard of my affairs. And set right for me the affairs of my world wherein is my living. And set right for me my Hereafter to which is my return. And make life for me a source of abundance for every good and make my death a source of comfort for me protecting me from every evil."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Muslim 4/2087</span>
+              </div>
+            </div>
+
+            <!-- NEW: Evening Protection from Evil -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Protection from All Evil</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ كُلِّ دَابَّةٍ أَنْتَ آخِذٌ بِنَاصِيَتِهَا، إِنَّ رَبِّي عَلَى صِرَاطٍ مُسْتَقِيمٍ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni a'udhu bika min sharri nafsi, wa min sharri kulli dabbatin anta akhidhun binasiyatiha, inna rabbi 'ala siratin mustaqim."
+              </div>
+              <div class="dua-translation">
+                "O Allah, I seek refuge in You from the evil of my own self, and from the evil of every creature that You hold by its forelock. Surely my Lord is on a straight path."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Tirmidhi 5/560</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Night Duas -->
+          <div class="duas-category" id="night-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.nightTitle">Night Supplications</h2>
+              <p data-i18n="duas.nightDescription">Recite these duas before sleeping for protection and blessings through the night.</p>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.nightDua1">Before Sleeping</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا
+              </div>
+              <div class="dua-transliteration">
+                "Bismika allahumma amutu wa ahya"
+              </div>
+              <div class="dua-translation" data-i18n="duas.nightDua1Trans">
+                "In Your name, O Allah, I die and I live."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.nightDua1Ref">Bukhari 7/155</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.nightDua2">Sleeping Dua</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma qini 'adhabaka yawma tab'athu 'ibadak"
+              </div>
+              <div class="dua-translation" data-i18n="duas.nightDua2Trans">
+                "O Allah, protect me from Your punishment on the day You resurrect Your servants."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.nightDua2Ref">Abu Dawud 4/311</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.nightDua3">Ayat al-Kursi Before Sleep</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْديهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ
+              </div>
+              <div class="dua-transliteration">
+                "Allahu la ilaha illa huwa al-hayy al-qayyum, la ta'khuthuhu sinatun wala nawm, lahu ma fis-samawati wa ma fil-ard, man dhal-ladhi yashfa'u 'indahu illa bi-idhnihi, ya'lamu ma bayna aydayhim wa ma khalfahum, wa la yuhituna bishay'im min 'ilmihi illa bima sha'a, wasi'a kursiyyuhus-samawati wal-arda, wa la ya'uduhu hifdhuhuma, wa huwal-'aliyyul-'azim."
+              </div>
+              <div class="dua-translation" data-i18n="duas.nightDua3Trans">
+                "Allah! There is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what will be after them, and they encompass not a thing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Most Great."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.nightDua3Ref">Quran 2:255</span>
+              </div>
+            </div>
+
+            <!-- NEW: Night Guidance Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Guidance Before Sleep</h3>
+                  <span class="dua-category-tag">Guidance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ رَبَّ السَّمَاوَاتِ وَرَبَّ الْأَرْضِ وَرَبَّ الْعَرْشِ الْعَظِيمِ، رَبَّنَا وَرَبَّ كُلِّ شَيْءٍ، فَالِقَ الْحَبِّ وَالنَّوَى، وَمُنْزِلَ التَّوْرَاةِ وَالْإِنْجِيلِ وَالْفُرْقَانِ، أَعُوذُ بِكَ مِنْ شَرِّ كُلِّ شَيْءٍ أَنْتَ آخِذٌ بِنَاصِيَتِهِ، اللَّهُمَّ أَنْتَ الْأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ، وَأَنْتَ الْآخِرُ فَلَيْسَ بَعْدَكَ شَيْءٌ، وَأَنْتَ الظَّاهِرُ فَلَيْسَ فَوْقَكَ شَيْءٌ، وَأَنْتَ الْبَاطِنُ فَلَيْسَ دُونَكَ شَيْءٌ، اقْضِ عَنَّا الدَّيْنَ وَأَغْنِنَا مِنَ الْفَقْرِ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma rabbas-samawati wa rabbal-ardhi wa rabbal-'arshil-'azim, rabbana wa rabba kulli shay'in, faliqal-habbi wan-nawa, wa munzilat-tawrati wal-injili wal-furqan, a'udhu bika min sharri kulli shay'in anta akhidhun binasiyatihi. Allahumma antal-awwalu falaysa qablaka shay'un, wa antal-akhiru falaysa ba'daka shay'un, wa antaz-zahiru falaysa fawqaka shay'un, wa antal-batinu falaysa dunaka shay'un, iqdi 'annad-dayna wa aghnina minal-faqr."
+              </div>
+              <div class="dua-translation">
+                "O Allah, Lord of the heavens and Lord of the earth and Lord of the mighty Throne, our Lord and Lord of everything, splitter of the seed and the date stone, revealer of the Torah, the Gospel and the Criterion (Qur'an). I seek refuge in You from the evil of every creature that You seize by its forelock. O Allah, You are the First, so there is nothing before You; and You are the Last, so there is nothing after You; and You are the Manifest, so there is nothing above You; and You are the Hidden, so there is nothing beyond You. Settle our debt and enrich us from poverty."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Muslim 1/532</span>
+              </div>
+            </div>
+
+            <!-- NEW: Night Protection from Shaytan -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Protection from Shaytan</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ، وَأَعُوذُ بِكَ رَبِّ أَنْ يَحْضُرُونِ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni a'udhu bika min hamazatish-shayatini, wa a'udhu bika rabbi an yahdurun."
+              </div>
+              <div class="dua-translation">
+                "O Allah, I seek refuge in You from the whisperings of the devils, and I seek refuge in You, my Lord, lest they come near me."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Quran 23:97-98</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Occasions Duas -->
+          <div class="duas-category" id="special-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.specialTitle">Special Occasion Supplications</h2>
+              <p data-i18n="duas.specialDescription">Duas for specific occasions and circumstances in life.</p>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.eidDua">Eid Prayer Dua</h3>
+                  <span class="dua-category-tag">Festivals</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ وَلِلَّهِ الْحَمْدُ
+              </div>
+              <div class="dua-transliteration">
+                "Allahu Akbar Allahu Akbar La ilaha illallah Wallahu Akbar Allahu Akbar wa lillahi alhamd"
+              </div>
+              <div class="dua-translation" data-i18n="duas.eidDuaTrans">
+                "Allah is the Greatest, Allah is the Greatest. There is no deity but Allah, and Allah is the Greatest. Allah is the Greatest and to Allah belongs all praise."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.eidDuaRef">Muslim 2/604</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.fridayDua">Friday Prayer Dua</h3>
+                  <span class="dua-category-tag">Friday</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنَّ هَذِهِ جُمُعَتِي وَأَنَا شَاهِدٌ فَاغْفِرْ لِي مَا بَيْنَهَا وَمَا بَعْدَهَا
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inna hadhihi jumu'ati wa ana shahidun faghfir li ma baynaha wa ma ba'daha"
+              </div>
+              <div class="dua-translation" data-i18n="duas.fridayDuaTrans">
+                "O Allah, this is my Friday and I am a witness, so forgive me for what is between it and what comes after it."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.fridayDuaRef">Muslim 2/583</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.travelDua">Travel Dua</h3>
+                  <span class="dua-category-tag">Travel</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ وَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ
+              </div>
+              <div class="dua-transliteration">
+                "Subhana alladhi sakhkhara lana hadha wa ma kunna lahu muqrinin wa inna ila rabbina lamunqalibun"
+              </div>
+              <div class="dua-translation" data-i18n="duas.travelDuaTrans">
+                "Glory be to Him who has subjected this to us, for we could not have done it by ourselves. And indeed, to our Lord we will return."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.travelDuaRef">Quran 43:13</span>
+              </div>
+            </div>
+
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3 data-i18n="duas.sicknessDua">Dua for the Sick</h3>
+                  <span class="dua-category-tag">Health</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ وَاشْفِ أَنْتَ الشَّافِي لَا شِفَاءَ إِلَّا شِفَاؤُكَ شِفَاءً لَا يُغَادِرُ سَقَمًا
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma rabban-nasi adhhibil ba'sa washfi antash-shafi la shifa'a illa shifa'uka shifa'an la yughadiru saqaman"
+              </div>
+              <div class="dua-translation" data-i18n="duas.sicknessDuaTrans">
+                "O Allah, Lord of mankind, remove the harm and heal, You are the Healer. There is no healing except Your healing, a healing that leaves no disease behind."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text" data-i18n="duas.sicknessDuaRef">Bukhari 7/155</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Forgiveness Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Forgiveness of Major Sins</h3>
+                  <span class="dua-category-tag">Forgiveness</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ اغْفِرْ لِي خَطِيئَتِي وَجَهْلِي وَإِسْرَافِي فِي أَمْرِي وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّي، اللَّهُمَّ اغْفِرْ لِي جِدِّي وَهَزْلِي وَخَطَئِي وَعَمْدِي وَكُلُّ ذَلِكَ عِنْدِي، اللَّهُمَّ اغْفِرْ لِي مَا قَدَّمْتُ وَمَا أَخَّرْتُ وَمَا أَسْرَرْتُ وَمَا أَعْلَنْتُ وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّي، أَنْتَ الْمُقَدِّمُ وَأَنْتَ الْمُؤَخِّرُ وَأَنْتَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma ighfir li khati'ati wa jahli wa israfi fi amri wa ma anta a'lamu bihi minni. Allahumma ighfir li jiddi wa hazli wa khata'i wa 'amdi wa kullu dhalika 'indi. Allahumma ighfir li ma qaddamtu wa ma akh-khartu wa ma asrartu wa ma a'lantu wa ma anta a'lamu bihi minni, antal-muqaddimu wa antal-mu'akh-khiru wa anta 'ala kulli shay'in qadir."
+              </div>
+              <div class="dua-translation">
+                "O Allah, forgive my sins, my ignorance, my immoderation in my affairs, and what You know better than me. O Allah, forgive my serious mistakes and my jokes, my errors and my intentional wrongs, and all that I have done. O Allah, forgive what I have done in the past and what I may do in the future, what I have concealed and what I have done openly, and what You know better than me. You are the One who brings forward and You are the One who delays, and You have power over all things."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Bukhari 8/95</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Guidance Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Guidance in Difficult Times</h3>
+                  <span class="dua-category-tag">Guidance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni as'alukal-huda wat-tuqa wal-'afafa wal-ghina"
+              </div>
+              <div class="dua-translation">
+                "O Allah, I ask You for guidance, piety, chastity, and self-sufficiency."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Muslim 4/2076</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Blessings Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Comprehensive Blessings</h3>
+                  <span class="dua-category-tag">Blessings</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ، وَأَنْتَ الْمُسْتَعَانُ، وَعَلَيْكَ الْبَلَاغُ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni as'aluka min khayri ma sa'alaka minhu nabiyyuka Muhammadun, wa a'udhu bika min sharri ma-sta'adha minhu nabiyyuka Muhammadun, wa antal-musta'anu, wa 'alaykal-balaqhu, wa la hawla wa la quwwata illa billah."
+              </div>
+              <div class="dua-translation">
+                "O Allah, I ask You for the good that Your Prophet Muhammad asked You for, and I seek refuge with You from the evil from which Your Prophet Muhammad sought refuge with You. You are the One from Whom help is sought, and to You is the complaint, and there is no might nor power except with Allah."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Tirmidhi 5/560</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Protection Dua 1 -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Protection from Calamities</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ زَوَالِ نِعْمَتِكَ، وَتَحَوُّلِ عَافِيَتِكَ، وَفُجَاءَةِ نِقْمَتِكَ، وَجَمِيعِ سَخَطِكَ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni a'udhu bika min zawali ni'matik, wa tahawwuli 'afiyatik, wa fuja'ati niqmatik, wa jami'i sakhatik."
+              </div>
+              <div class="dua-translation">
+                "O Allah, I seek refuge in You from the withdrawal of Your blessing, and the changing of Your protection, and the suddenness of Your vengeance, and from all that which may lead to Your anger."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Muslim 4/2079</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Protection Dua 2 -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Protection in Trials</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni a'udhu bika minal-hammi wal-hazani, wal-'ajzi wal-kasali, wal-bukhli wal-jubni, wa dala'id-dayni wa ghalabatir-rijali."
+              </div>
+              <div class="dua-translation">
+                "O Allah, I seek refuge in You from anxiety and grief, from inability and laziness, from miserliness and cowardice, from being overcome by debt and being overpowered by men."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Bukhari 7/158</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Guidance Dua 2 -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Right Guidance</h3>
+                  <span class="dua-category-tag">Guidance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ أَرِنَا الْحَقَّ حَقًّا وَارْزُقْنَا اتِّبَاعَهُ، وَأَرِنَا الْبَاطِلَ بَاطِلًا وَارْزُقْنَا اجْتِنَابَهُ، وَلَا تَجْعَلْهُ مُلْتَبِسًا عَلَيْنَا فَنَضِلَّ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma arinal-haqqa haqqan warzuqnat-tiba'ahu, wa arinal-batila batilan warzuqnaj-tinabahu, wa la taj'alhu multabisan 'alayna fanadilla."
+              </div>
+              <div class="dua-translation">
+                "O Allah, show us the truth as truth and grant us the ability to follow it, and show us falsehood as falsehood and grant us the ability to avoid it, and do not make it confusing to us so that we may go astray."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Ahmad 1/435</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Marriage Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Marriage</h3>
+                  <span class="dua-category-tag">Blessings</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ الدُّعَاءِ
+              </div>
+              <div class="dua-transliteration">
+                "Rabbi hab li min ladunka dhurriyyatan tayyibatan innaka sami'ud-du'a"
+              </div>
+              <div class="dua-translation">
+                "My Lord, grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Quran 3:38</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion New Home Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for New Home</h3>
+                  <span class="dua-category-tag">Blessings</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ، بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma inni as'aluka khayral-mawliji wa khayral-makhraji, bismillahi walajna, wa bismillahi kharajna, wa 'alallahi rabbina tawakkalna."
+              </div>
+              <div class="dua-translation">
+                "O Allah, I ask You for the best of entry and the best of exit. In the name of Allah we enter, and in the name of Allah we exit, and in Allah our Lord we put our trust."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Abu Dawud 4/325</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Exams/Study Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Exams and Study</h3>
+                  <span class="dua-category-tag">Guidance</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلتَهُ سَهْلاً، وَأَنْتَ تَجْعَلُ الحَزْنَ إِذَا شِئْتَ سَهْلاً
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma la sahla illa ma ja'altahu sahla, wa anta taj'alul-hazna idha shi'ta sahla."
+              </div>
+              <div class="dua-translation">
+                "O Allah, there is nothing easy except what You make easy, and You make the difficult easy if You wish."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Ibn Hibban 3/255</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Financial Difficulties Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Financial Difficulties</h3>
+                  <span class="dua-category-tag">Blessings</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ
+              </div>
+              <div class="dua-transliteration">
+                "Allahumma ikfini bihalalika 'an haramik, wa aghnini bifadlika 'amman siwak."
+              </div>
+              <div class="dua-translation">
+                "O Allah, suffice me with what You have made lawful as opposed to what You have made unlawful, and enrich me by Your bounty, sparing me the need of others."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Tirmidhi 5/560</span>
+              </div>
+            </div>
+
+            <!-- NEW: Special Occasion Protection from Enemies Dua -->
+            <div class="dua-card">
+              <div class="dua-header">
+                <div class="dua-title">
+                  <h3>Dua for Protection from Enemies</h3>
+                  <span class="dua-category-tag">Protection</span>
+                </div>
+                <div class="dua-actions">
+                  <button class="copy-btn" data-i18n-title="actions.copy" title="Copy Dua"><i class="far fa-copy"></i></button>
+                  <button class="favorite-btn" data-i18n-title="actions.favorite" title="Add to Favorites"><i class="far fa-heart"></i></button>
+                </div>
+              </div>
+              <div class="dua-arabic" dir="rtl" lang="ar">
+                حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ
+              </div>
+              <div class="dua-transliteration">
+                "Hasbunallahu wa ni'mal-wakil"
+              </div>
+              <div class="dua-translation">
+                "Sufficient for us is Allah, and He is the best Disposer of affairs."
+              </div>
+              <div class="dua-reference">
+                <span class="reference-label" data-i18n="duas.reference">Reference:</span>
+                <span class="reference-text">Quran 3:173</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Favorites Section -->
+        <div class="favorites-section">
+          <h2 data-i18n="duas.favorites">Favorite Duas</h2>
+          <div class="favorites-container" id="favoritesContainer">
+            <p class="empty-favorites" data-i18n="duas.noFavorites">No favorite duas yet. Click the heart icon to add some.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mosque"></i>
+            <span>Heedaya</span>
+          </div>
+          <p>&copy; 2026</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="quran.html"><i class="fas fa-book-quran"></i> Quran</a></li>
+            <li><a href="duas.html"><i class="fas fa-pray"></i> Duas</a></li>
+            <li><a href="hijri.html"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Message</h3>
+          <p>This site is made with <i class="fas fa-heart" style="color: #e74c3c;"></i> to a special person</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-message" id="toastMessage"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/language.js"></script>
+  <script src="js/duas.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

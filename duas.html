@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Duas - Hidaya</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-mosque"></i>
+          <span data-i18n="app.name">Hidaya</span>
+        </div>
+        <nav class="nav-menu">
+          <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+          <a href="duas.html" class="nav-link active" data-i18n="nav.duas">Duas</a>
+          <a href="hijri.html" class="nav-link" data-i18n="nav.calendar">Calendar</a>
+    
+        </nav>
+        <div class="mobile-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Duas Page Content -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <h1 data-i18n="duas.title">Daily Duas</h1>
+        <p data-i18n="duas.subtitle">Authentic Islamic supplications for morning, evening, night and special occasions</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <div class="duas-container">
+        <!-- Category Tabs -->
+        <div class="duas-tabs">
+          <button class="tab-btn active" data-category="morning" data-i18n="duas.morning">Morning Duas</button>
+          <button class="tab-btn" data-category="evening" data-i18n="duas.evening">Evening Duas</button>
+          <button class="tab-btn" data-category="night" data-i18n="duas.night">Night Duas</button>
+          <button class="tab-btn" data-category="special" data-i18n="duas.special">Special Occasions</button>
+        </div>
+
+        <!-- Duas Content -->
+        <div class="duas-content">
+          <!-- Morning Duas -->
+          <div class="duas-category active" id="morning-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.morningTitle">Morning Supplications</h2>
+              <p data-i18n="duas.morningDescription">Recite these duas from Fajr until sunrise for protection and blessings throughout the day.</p>
+            </div>
+            <!-- Duas will be rendered here by JavaScript -->
+          </div>
+
+          <!-- Evening Duas -->
+          <div class="duas-category" id="evening-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.eveningTitle">Evening Supplications</h2>
+              <p data-i18n="duas.eveningDescription">Recite these duas from Asr until sunset for protection through the night.</p>
+            </div>
+            <!-- Duas will be rendered here by JavaScript -->
+          </div>
+
+          <!-- Night Duas -->
+          <div class="duas-category" id="night-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.nightTitle">Night Supplications</h2>
+              <p data-i18n="duas.nightDescription">Recite these duas before sleeping for protection and blessings through the night.</p>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!-- Duas will be rendered here by JavaScript -->
+          </div>
+
+          <!-- Special Occasions Duas -->
+          <div class="duas-category" id="special-duas">
+            <div class="category-info">
+              <h2 data-i18n="duas.specialTitle">Special Occasion Supplications</h2>
+              <p data-i18n="duas.specialDescription">Duas for specific occasions and circumstances in life.</p>
+            </div>
+            <!-- Duas will be rendered here by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Favorites Section -->
+        <div class="favorites-section">
+          <h2 data-i18n="duas.favorites">Favorite Duas</h2>
+          <div class="favorites-container" id="favoritesContainer">
+            <p class="empty-favorites" data-i18n="duas.noFavorites">No favorite duas yet. Click the heart icon to add some.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mosque"></i>
+            <span>Heedaya</span>
+          </div>
+          <p>&copy; 2026</p>
+        </div> 
+        <div class="footer-section">
+          <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> <span data-i18n="nav.home">Home</span></a></li>
+            <li><a href="duas.html"><i class="fas fa-pray"></i> <span data-i18n="nav.duas">Duas</span></a></li>
+            <li><a href="hijri.html"><i class="fas fa-calendar-alt"></i> <span data-i18n="nav.calendar">Calendar</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 data-i18n="footer.message">Message</h3>
+          <p data-i18n="footer.messageText">This site is made with <i class="fas fa-heart" style="color: #e74c3c;"></i> to a special person</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-message" id="toastMessage"></span>
+  </div>
+
+  <!-- Scripts --> 
+  <script src="js/duas.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

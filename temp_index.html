@@ -1,0 +1,276 @@
+setInterval(updatePrayerWidget, 60000);
+=======
+      // Update prayer widget every second for real-time countdown
+      setInterval(updatePrayerWidget, 1000);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hidaya - Your spiritual companion for daily Islamic practices including Quran, duas, and Hijri calendar. Read the Holy Quran and explore Islamic teachings.">
+  <meta name="keywords" content="Islamic, Quran, duas, Hijri calendar, Muslim, Islam, Islamic app, Quran reader, Islamic calendar, duas collection">
+  <meta name="author" content="Hidaya">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#D4AF37">
+  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://hidaya.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hidaya.app/">
+  <meta property="og:title" content="Hidaya - Your Spiritual Companion">
+  <meta property="og:description" content="Your spiritual companion for daily Islamic practices including prayer times, duas, and Hijri calendar.">
+  <meta property="og:image" content="https://hidaya.app/assets/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://hidaya.app/">
+  <meta property="twitter:title" content="Hidaya - Your Spiritual Companion">
+  <meta property="twitter:description" content="Your spiritual companion for daily Islamic practices including prayer times, duas, and Hijri calendar.">
+  <meta property="twitter:image" content="https://hidaya.app/assets/twitter-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hidaya",
+    "description": "Your spiritual companion for daily Islamic practices including prayer times, duas, and Hijri calendar",
+    "url": "https://hidaya.app/",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Quran Reader",
+      "Islamic Duas Collection",
+      "Hijri Calendar",
+      "Prayer Notifications"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Hidaya"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>Hidaya - Your Spiritual Companion</title>
+
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://api.aladhan.com">
+  <link rel="dns-prefetch" href="https://api.aladhan.com">
+
+  <link rel="stylesheet" href="style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Amiri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Loading Screen -->
+  <div class="loader">
+    <div class="loader-content">
+      <i class="fas fa-mosque"></i>
+      <h2>Hidaya</h2>
+      <div class="loader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Header with Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="nav-container">
+        <div class="logo">
+          <i class="fas fa-mosque"></i>
+          <span>Hidaya</span>
+        </div>
+        <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+          <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+          <a href="duas.html" class="nav-link">Duas</a>
+          <a href="hijri.html" class="nav-link">Calendar</a>
+          <div class="language-selector">
+            <label for="languageSelect" class="sr-only">Select Language</label>
+            <select id="languageSelect" aria-label="Choose language">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+        </nav>
+        <button class="mobile-toggle" aria-label="Toggle mobile menu" type="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="main-content">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title" data-i18n="hero.title">Your Spiritual Companion</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Find prayer times, duas, and more in one beautiful Islamic application</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="goToPage('duas.html')" data-i18n="hero.getStarted">Get Started</button>
+          <button class="btn-secondary" onclick="scrollToFeatures()" data-i18n="hero.learnMore">Learn More</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="features.title">Islamic Tools & Resources</h2>
+        <p data-i18n="features.subtitle">Everything you need for your daily spiritual journey</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Duas -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-hands-praying"></i>
+          </div>
+          <h3 data-i18n="features.duas.title">Daily Duas</h3>
+          <p data-i18n="features.duas.description">Collection of authentic daily duas with translations and audio recitations.</p>
+          <button onclick="goToPage('duas.html')" class="feature-btn">
+            <span data-i18n="features.open">Open</span> <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <!-- Hijri Calendar -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-calendar-days"></i>
+          </div>
+          <h3 data-i18n="features.calendar.title">Hijri Calendar</h3>
+          <p data-i18n="features.calendar.description">Check today's Hijri date and upcoming Islamic events with notifications.</p>
+          <button onclick="goToPage('hijri.html')" class="feature-btn">
+            <span data-i18n="features.open">Open</span> <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Info Section -->
+  <section class="app-info" id="about">
+    <div class="container">
+      <div class="info-content">
+        <div class="info-text">
+          <h2 data-i18n="about.title">Enhance Your Spiritual Journey</h2>
+          <p data-i18n="about.description">Hidaya is designed to help Muslims around the world stay connected to their faith with easy access to essential Islamic tools and resources.</p>
+          <ul class="info-list">
+            <li><i class="fas fa-check"></i> <span data-i18n="about.feature1">Read the Holy Quran with translations in multiple languages</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="about.feature4">Authentic duas for daily life</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="about.feature5">Hijri calendar with important dates</span></li>
+          </ul>
+        </div>
+        <div class="info-visual">
+          <div class="visual-card">
+            <div class="visual-header">
+             
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fas fa-mosque"></i>
+            <span>Heedaya</span>
+          </div>
+          <p>&copy; 2026</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="duas.html"><i class="fas fa-pray"></i> Duas</a></li>
+            <li><a href="hijri.html"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Message</h3>
+          <p>This site is made with <i class="fas fa-heart" style="color: #e74c3c;"></i> to a special person</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Main JavaScript for the homepage
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide loader after page loads
+      setTimeout(function() {
+        document.querySelector('.loader').style.display = 'none';
+      }, 1000);
+
+      // Mobile menu toggle
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          mobileToggle.classList.toggle('active');
+        });
+      }
+
+      // Language selector
+      const languageSelect = document.getElementById('languageSelect');
+      if (languageSelect) {
+        languageSelect.addEventListener('change', function() {
+          console.log('Language changed to:', this.value);
+          // Language change functionality would go here
+        });
+      }
+
+
+    });
+
+
+
+    // Navigation functions
+    function goToPage(page) {
+      window.location.href = page;
+    }
+
+    function scrollToFeatures() {
+      document.getElementById('features').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+    }
+  </script>
+</body>
+</html>
